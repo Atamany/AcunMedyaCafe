@@ -16,5 +16,7 @@ namespace AcunMedyaCafe.Context
         public DbSet<Adress> Adresses { get; set; }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Gallery> Galleries { get; set; }
+        public DbSet<Subscriber> Subscribers { get; set; }
+        public DbSet<Social> Socials { get; set; }
     }
 }
