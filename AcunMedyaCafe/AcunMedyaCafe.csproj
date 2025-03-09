@@ -7,6 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\coffee-master\Coffee - Doc\.DS_Store" />
+    <None Include="wwwroot\coffee-master\Coffee - Doc\css\.DS_Store" />
+    <None Include="wwwroot\coffee-master\Coffee - Doc\fonts\.DS_Store" />
+    <None Include="wwwroot\coffee-master\Coffee - Doc\img\.DS_Store" />
+    <None Include="wwwroot\coffee-master\Coffee - Doc\js\.DS_Store" />
+    <None Include="wwwroot\coffee-master\Coffee - Doc\syntax-highlighter\.DS_Store" />
+    <None Include="wwwroot\coffee-master\css\.DS_Store" />
+    <None Include="wwwroot\coffee-master\img\.DS_Store" />
+    <None Include="wwwroot\coffee-master\js\.DS_Store" />
+    <None Include="wwwroot\coffee-master\scss\.DS_Store" />
+    <None Include="wwwroot\coffee-master\scss\bootstrap\.DS_Store" />
+    <None Include="wwwroot\coffee-master\scss\theme\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.13">
       <PrivateAssets>all</PrivateAssets>
@@ -17,6 +32,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
   </ItemGroup>
 
 </Project>
