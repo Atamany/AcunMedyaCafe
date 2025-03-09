@@ -28,29 +28,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="row align-items-center justify-content-between d-flex">
-				<div id="logo">
-					<a href="index.html"><img src="~/coffee-master/img/logo.png" alt="" title="" /></a>
-				</div>
-				<nav id="nav-menu-container">
-					<ul class="nav-menu">
-						<li class="menu-active"><a href="#home">Home</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#coffee">Coffee</a></li>
-						<li><a href="#review">Review</a></li>
-						<li><a href="#blog">Blog</a></li>
-						<li class="menu-has-children">
-							<a href="">Pages</a>
-							<ul>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav><!-- #nav-menu-container -->
-			</div>
-		</div>
+		@await Component.InvokeAsync("_DefaultNavbarComponentPartial")
 	</header><!-- #header -->
 	<!-- start banner Area -->
 	@await Component.InvokeAsync("_DefaultFeatureComponentPartial")
@@ -413,24 +391,8 @@
 		</div>
 	</footer>
 	<!-- End footer Area -->
-
-	<script src="~/coffee-master/js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="~/coffee-master/js/vendor/bootstrap.min.js"></script>
-	<script type="~/coffee-master/text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-	<script src="~/coffee-master/js/easing.min.js"></script>
-	<script src="~/coffee-master/js/hoverIntent.js"></script>
-	<script src="~/coffee-master/js/superfish.min.js"></script>
-	<script src="~/coffee-master/js/jquery.ajaxchimp.min.js"></script>
-	<script src="~/coffee-master/js/jquery.magnific-popup.min.js"></script>
-	<script src="~/coffee-master/js/owl.carousel.min.js"></script>
-	<script src="~/coffee-master/js/jquery.sticky.js"></script>
-	<script src="~/coffee-master/js/jquery.nice-select.min.js"></script>
-	<script src="~/coffee-master/js/parallax.min.js"></script>
-	<script src="~/coffee-master/js/waypoints.min.js"></script>
-	<script src="~/coffee-master/js/jquery.counterup.min.js"></script>
-	<script src="~/coffee-master/js/mail-script.js"></script>
-	<script src="~/coffee-master/js/main.js"></script>
+	@await Component.InvokeAsync("_DefaultScriptComponentPartial")
+	
 </body>
 </html>
 
