@@ -1,5 +1,6 @@
 ﻿using AcunMedyaCafe.Context;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AcunMedyaCafe.ViewComponents
 {
@@ -14,7 +15,7 @@ namespace AcunMedyaCafe.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            var value = _context.Products.ToList();
+            var value = _context.Products.Include(x=>x.Category).ToList();
             return View(value);
 
         }

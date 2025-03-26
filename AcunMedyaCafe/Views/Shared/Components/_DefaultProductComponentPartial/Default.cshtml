@@ -15,17 +15,19 @@
             {
                 <div class="col-lg-4">
                     <div class="single-menu">
-                    <div class="title-div justify-content-between d-flex">
-                        <h4>@item.Name</h4>
-                        <p class="price float-right">
-                            @item.Price ₺
+                        <div class="title-div justify-content-between d-flex">
+                            <h4>@item.Name</h4>
+                            <p class="price float-right">
+                                @item.Price ₺
+                            </p>
+                        </div>
+                        <p>
+                            @item.Description
                         </p>
+
+                        <h6>@item.Category.CategoryName</h6>
                     </div>
-                    <p>
-                        @item.Description
-                    </p>
                 </div>
-            </div>
             }
         </div>
     </div>
