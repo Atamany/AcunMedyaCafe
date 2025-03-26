@@ -36,5 +36,17 @@ namespace AcunMedyaCafe.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public IActionResult UpdateCategory(int id)
+        {
+            var value = _context.Categories.Find(id);
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult UpdateCategory(Category p)
+        {
+            _context.Categories.Update(p);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
