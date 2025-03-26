@@ -1,0 +1,28 @@
+﻿@model List<AcunMedyaCafe.Entities.Testimonial>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-6 col-md-6 single-review">
+            <img src="@item.ImageUrl" alt="">
+            <div class="title d-flex flex-row">
+                <h4>@item.Title</h4>
+                <div class="star">
+                    @for (int i = 1; i < 5; i++)
+                    {
+                        if (i <= item.Raiting)
+                        {
+                            <span class="fa fa-star checked"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-star"></span>
+                        }
+                    }
+                </div>
+            </div>
+            <p>
+                @item.Description
+            </p>
+        </div>
+    }
+</div>
