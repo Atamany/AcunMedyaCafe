@@ -1,0 +1,33 @@
+﻿@model List<AcunMedyaCafe.Entities.Product>
+
+<section class="menu-area section-gap" id="coffee">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-10">
+                <div class="title text-center">
+                    <h1 class="mb-10">Kahvelerimiz</h1>
+                    <p>Aradığınız kahveler işte burada...</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4">
+                    <div class="single-menu">
+                    <div class="title-div justify-content-between d-flex">
+                        <h4>@item.Name</h4>
+                        <p class="price float-right">
+                            @item.Price ₺
+                        </p>
+                    </div>
+                    <p>
+                        @item.Description
+                    </p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
