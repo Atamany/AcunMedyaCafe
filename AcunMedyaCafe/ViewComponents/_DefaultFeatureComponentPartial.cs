@@ -15,7 +15,8 @@ namespace AcunMedyaCafe.ViewComponents
         public IViewComponentResult Invoke()
         {
             var value = _context.Features.ToList();
-            return View();
+            return View(value);
+
         }
     }
 }

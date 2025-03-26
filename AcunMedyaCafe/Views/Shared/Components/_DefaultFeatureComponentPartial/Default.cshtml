@@ -1,15 +1,16 @@
-﻿<section class="banner-area" id="home">
-	<div class="container">
-		<div class="row fullscreen d-flex align-items-center justify-content-start">
-			<div class="banner-content col-lg-7">
-				<h6 class="text-white text-uppercase">Şimdi Enerji Zamanı!</h6>
-				<h1>
-					Bir Kahvenin <br>
-					Kırk Yıl Hatrı Vardır!
-				</h1>
-				<a href="#" class="primary-btn text-uppercase">Buy Now</a>
-			</div>
-		</div>
-	</div>
+﻿@model List<AcunMedyaCafe.Entities.Feature>
+@foreach (var item in Model) { 
+<section class="banner-area" id="home">
+    <div class="container">
+        <div class="row fullscreen d-flex align-items-center justify-content-start">
+            <div class="banner-content col-lg-7">
+                <h6 class="text-white text-uppercase">@item.Subtitle</h6>
+                <h1>
+                    @item.Title
+                </h1>
+                <a href="#" class="primary-btn text-uppercase">Satın Al</a>
+            </div>
+        </div>
+    </div>
 </section>
-
+}
