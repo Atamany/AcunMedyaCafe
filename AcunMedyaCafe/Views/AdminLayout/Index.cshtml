@@ -7,18 +7,15 @@
 @await Component.InvokeAsync("_AdminLayoutHeadComponentPartial")
 <body>
     <div class="container-scroller">
-        <!-- partial:~/PurpleAdmin/partials/_navbar.html -->
         @await Component.InvokeAsync("_AdminLayoutNavbarComponentPartial")
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-            <!-- partial:../../partials/_sidebar.html -->
             @await Component.InvokeAsync("_AdminLayoutSidebarComponentPartial")
             <!-- partial -->
             <div class="main-panel">
                 @RenderBody()
                 
                 <!-- content-wrapper ends -->
-                <!-- partial:../../partials/_footer.html -->
                 @await Component.InvokeAsync("_AdminLayoutFooterComponentPartial")
                 <!-- partial -->
             </div>
