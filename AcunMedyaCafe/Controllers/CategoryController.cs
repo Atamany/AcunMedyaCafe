@@ -29,5 +29,12 @@ namespace AcunMedyaCafe.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public IActionResult DeleteCategory(int id)
+        {
+            var value = _context.Categories.Find(id);
+            _context.Remove(value);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
