@@ -1,4 +1,5 @@
 ﻿using AcunMedyaCafe.Context;
+using AcunMedyaCafe.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AcunMedyaCafe.Controllers
@@ -16,6 +17,17 @@ namespace AcunMedyaCafe.Controllers
         {
             var values = _context.Categories.ToList();
             return View(values);
+        }
+        public IActionResult AddCategory()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddCategory(Category p)
+        {
+            _context.Categories.Add(p);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
