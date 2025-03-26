@@ -19,6 +19,7 @@
     <None Include="wwwroot\coffee-master\scss\.DS_Store" />
     <None Include="wwwroot\coffee-master\scss\bootstrap\.DS_Store" />
     <None Include="wwwroot\coffee-master\scss\theme\.DS_Store" />
+    <None Include="wwwroot\PurpleAdmin\.DS_Store" />
   </ItemGroup>
 
   <ItemGroup>
