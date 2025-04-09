@@ -44,7 +44,7 @@
                                     <td><img src="@item.ImageUrl" style="width:100px;height:100px" /></td>
                                     <td>@item.Category.CategoryName</td>
                                     <td><a href="/Product/UpdateProduct/@item.ProductId" class="badge badge-info">Güncelle</a></td>
-                                    <td><a href="/Product/DeleteProduct/@item.ProductId" class="badge badge-danger">Sil</a></td>
+                                    <td><a onclick="deleteProduct(@item.ProductId)" class="badge badge-danger">Sil</a></td>
                                 </tr>
                             }
                         </tbody>
@@ -56,5 +56,23 @@
     </div>
 </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function deleteProduct(id){
+        Swal.fire({
+            title: 'Silmek İstediğinize Emin Misiniz?',
+            text: "Bu işlem geri alınamaz!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Evet, Sil!',
+            cancelButtonText: 'İptal Et!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Product/DeleteProduct/" + id;
+            }
+        })
+    }
+    </script>
 
