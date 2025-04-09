@@ -1,0 +1,48 @@
+﻿@model AcunMedyaCafe.Entities.Product
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Ürün Ekleme Sayfası </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Ekleme İşlemi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Ürün</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <label>Ürün Adı</label>
+                        <input type="text" asp-for="Name" class="form-control" />
+                        <br />
+                        <label>Kategori</label>
+                        <select asp-for="CategoryId" asp-items="@ViewBag.v" class="form-select">
+                            <option value="">Kategori Seçiniz...</option>
+                            </select>
+                        <br />
+                        <label>Fiyat</label>
+                        <input type="text" asp-for="Price" class="form-control" />
+                        <br />
+                        <label>Açıklama</label>
+                        <input type="text" asp-for="Description" class="form-control" />
+                        <br />
+                        <label>Resim (URL)</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" />
+                        <br />
+                        <button class="btn btn-primary"><i class="fa fa-save"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

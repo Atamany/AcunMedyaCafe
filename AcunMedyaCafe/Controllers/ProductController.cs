@@ -1,5 +1,6 @@
 ﻿using AcunMedyaCafe.Context;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace AcunMedyaCafe.Controllers
@@ -15,6 +16,25 @@ namespace AcunMedyaCafe.Controllers
         {
             var values = db.Products.Include(x=>x.Category).ToList();
             return View(values);
+        }
+        [HttpGet]
+        public IActionResult AddProduct()
+        {
+            List<SelectListItem> values = (from x in db.Categories.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryId.ToString()
+                                           }).ToList();
+            ViewBag.v = values;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddProduct(Entities.Product p)
+        {
+            db.Products.Add(p);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
