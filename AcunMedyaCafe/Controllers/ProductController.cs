@@ -47,5 +47,41 @@ namespace AcunMedyaCafe.Controllers
             }
             return View();
         }
-    }
+        public IActionResult DeleteProduct(int id)
+        {
+            var product = db.Products.Find(id);
+            db.Products.Remove(product);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult UpdateProduct(int id)
+        {
+            var product = db.Products.Find(id);
+            List<SelectListItem> values = (from x in db.Categories.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryId.ToString()
+                                           }).ToList();
+            ViewBag.v = values;
+            return View(product);
+        }
+        [HttpPost]
+        public IActionResult UpdateProduct(Product p)
+        {
+            if (p.ImageFile != null)
+            {
+                var extension = Path.GetExtension(p.ImageFile.FileName);
+                var newImageName = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/", newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                p.ImageFile.CopyTo(stream);
+                p.ImageUrl = "/images/" + newImageName;
+            }
+            db.Products.Update(p);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        }
 }
