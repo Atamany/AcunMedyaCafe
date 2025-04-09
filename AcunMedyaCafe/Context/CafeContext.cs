@@ -18,5 +18,6 @@ namespace AcunMedyaCafe.Context
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Subscriber> Subscribers { get; set; }
         public DbSet<Social> Socials { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }
