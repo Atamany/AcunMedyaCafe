@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -8,167 +7,170 @@
 @await Component.InvokeAsync("_DefaultHeadComponentPartial")
 <body>
 
-	<header id="header" id="home">
-		<div class="header-top">
-			<div class="container">
-				<div class="row justify-content-end">
-					<div class="col-lg-8 col-sm-4 col-8 header-top-right no-padding">
-						<ul>
-							<li>
-								Mon-Fri: 8am to 2pm
-							</li>
-							<li>
-								Sat-Sun: 11am to 4pm
-							</li>
-							<li>
-								<a href="tel:(012) 6985 236 7512">(012) 6985 236 7512</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		@await Component.InvokeAsync("_DefaultNavbarComponentPartial")
-	</header><!-- #header -->
-	<!-- start banner Area -->
-	@await Component.InvokeAsync("_DefaultFeatureComponentPartial")
-	<!-- End banner Area -->
-	<!-- Start video-sec Area -->
-	<section class="video-sec-area pb-100 pt-40" id="about">
-		<div class="container">
-			<div class="row justify-content-start align-items-center">
-				<div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
-					<div class="overlay overlay-bg"></div>
-					<a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="img/play-icon.png" alt=""></a>
-				</div>
-				<div class="col-lg-6 video-left">
-					<h6>Live Coffee making process.</h6>
-					<h1>
-						We Telecast our <br>
-						Coffee Making Live
-					</h1>
-					<p><span>We are here to listen from you deliver exellence</span></p>
-					<p>
-						"Hayatımı kahve kaşıklarıyla ölçüyorum.”
-					</p>
-					<img class="img-fluid" src="https://i.hizliresim.com/ei8u83s.png" alt="">
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End video-sec Area -->
-	<!-- Start menu Area -->
-	@await Component.InvokeAsync("_DefaultProductComponentPartial")
-	<!-- End menu Area -->
-	<!-- Start gallery Area -->
-	<section class="gallery-area section-gap" id="gallery">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content pb-60 col-lg-10">
-					<div class="title text-center">
-						<h1 class="mb-10">What kind of Coffee we serve for you</h1>
-						<p>Who are in extremely love with eco friendly system.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4">
-					<a href="img/g1.jpg" class="img-pop-home">
-						<img class="img-fluid" src="~/coffee-master/img/g1.jpg" alt="">
-					</a>
-					<a href="img/g2.jpg" class="img-pop-home">
-						<img class="img-fluid" src="~/coffee-master/img/g2.jpg" alt="">
-					</a>
-				</div>
-				<div class="col-lg-8">
-					<a href="img/g3.jpg" class="img-pop-home">
-						<img class="img-fluid" src="~/coffee-master/img/g3.jpg" alt="">
-					</a>
-					<div class="row">
-						<div class="col-lg-6">
-							<a href="img/g4.jpg" class="img-pop-home">
-								<img class="img-fluid" src="~/coffee-master/img/g4.jpg" alt="">
-							</a>
-						</div>
-						<div class="col-lg-6">
-							<a href="img/g5.jpg" class="img-pop-home">
-								<img class="img-fluid" src="~/coffee-master/img/g5.jpg" alt="">
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End gallery Area -->
-	<!-- Start review Area -->
-	<section class="review-area section-gap" id="review">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content pb-60 col-lg-10">
-					<div class="title text-center">
-						<h1 class="mb-10">What kind of Coffee we serve for you</h1>
-						<p>Who are in extremely love with eco friendly system.</p>
-					</div>
-				</div>
-			</div>
-			@await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
-			@await Component.InvokeAsync("_DefaultStatisticComponentPartial")
-		</div>
-	</section>
-	<!-- End review Area -->
-	<!-- start footer Area -->
-	<footer class="footer-area section-gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-5 col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6>About Us</h6>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
-						</p>
-						<p class="footer-text">
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-5  col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6>Newsletter</h6>
-						<p>Stay update with our latest</p>
-						<div class="" id="mc_embed_signup">
-							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-								<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-								<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-								<div style="position: absolute; left: -5000px;">
-									<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-								</div>
+    <header id="header" id="home">
+        <div class="header-top">
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-lg-8 col-sm-4 col-8 header-top-right no-padding">
+                        <ul>
+                            <li>
+                                Mon-Fri: 8am to 2pm
+                            </li>
+                            <li>
+                                Sat-Sun: 11am to 4pm
+                            </li>
+                            <li>
+                                <a href="tel:(012) 6985 236 7512">(012) 6985 236 7512</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @await Component.InvokeAsync("_DefaultNavbarComponentPartial")
+    </header><!-- #header -->
+    <!-- start banner Area -->
+    @await Component.InvokeAsync("_DefaultFeatureComponentPartial")
+    <!-- End banner Area -->
+    <!-- Start video-sec Area -->
+    <section class="video-sec-area pb-100 pt-40" id="about">
+        <div class="container">
+            <div class="row justify-content-start align-items-center">
+                <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
+                    <div class="overlay overlay-bg"></div>
+                    <a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="img/play-icon.png" alt=""></a>
+                </div>
+                <div class="col-lg-6 video-left">
+                    <h6>Canlı Kahve yapım süreci.</h6>
+                    <h1>Kahve Yapımımızı <br /> Canlı Yayınlıyoruz</h1>
+                    <p>
+                        <span>
+                            Mükemmelliği sunmak için sizden haber almak için buradayız
+                        </span>
+                    </p>
+                    <p>
+                        "Hayatımı kahve kaşıklarıyla ölçüyorum.”
+                    </p>
+                    <img class="img-fluid" src="https://i.hizliresim.com/ei8u83s.png" style="height:40px;" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End video-sec Area -->
+    <!-- Start menu Area -->
+    @await Component.InvokeAsync("_DefaultProductComponentPartial")
+    <!-- End menu Area -->
+    <!-- Start gallery Area -->
+    <section class="gallery-area section-gap" id="gallery">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-60 col-lg-10">
+                    <div class="title text-center">
+                        <h1 class="mb-10">Galeri</h1>
+                        <p>
+                            Kafemizden güzel anlar...
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <a href="img/g1.jpg" class="img-pop-home">
+                        <img class="img-fluid" src="~/coffee-master/img/g1.jpg" alt="">
+                    </a>
+                    <a href="img/g2.jpg" class="img-pop-home">
+                        <img class="img-fluid" src="~/coffee-master/img/g2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-8">
+                    <a href="img/g3.jpg" class="img-pop-home">
+                        <img class="img-fluid" src="~/coffee-master/img/g3.jpg" alt="">
+                    </a>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a href="img/g4.jpg" class="img-pop-home">
+                                <img class="img-fluid" src="~/coffee-master/img/g4.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                            <a href="img/g5.jpg" class="img-pop-home">
+                                <img class="img-fluid" src="~/coffee-master/img/g5.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End gallery Area -->
+    <!-- Start review Area -->
+    <section class="review-area section-gap" id="review">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-60 col-lg-10">
+                    <div class="title text-center">
+                        <h1 class="mb-10">Yorumlar...</h1>
+                        <p>Kahvelerimiz hakkında müşterilerimizden gelen yorumlar...</p>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
+            @await Component.InvokeAsync("_DefaultStatisticComponentPartial")
+        </div>
+    </section>
+    <!-- End review Area -->
+    <!-- start footer Area -->
+    <footer class="footer-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6>About Us</h6>
+                        <p>
+                            Bu proje <a href="https://github.com/Atamany">Yiğit Ataman</a> tarafından AkademiQ Staj Eğitimi kapsamında ASP.NET Core ile yapılmıştır.
+                        </p>
+                        <p class="footer-text">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-5  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6>Bültene üye ol!</h6>
+                        <p>Yeni kampanyalardan haberdar olmak için üye ol!</p>
+                        <div class="" id="mc_embed_signup">
+                            <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+                                <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                                <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                                <div style="position: absolute; left: -5000px;">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                                </div>
 
-								<div class="info pt-20"></div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-					<div class="single-footer-widget">
-						<h6>Follow Us</h6>
-						<p>Let us be social</p>
-						<div class="footer-social d-flex align-items-center">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-dribbble"></i></a>
-							<a href="#"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End footer Area -->
-	@await Component.InvokeAsync("_DefaultScriptComponentPartial")
-	
+                                <div class="info pt-20"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                    <div class="single-footer-widget">
+                        <h6>Sosyal Medya</h6>
+                        <p>Bizi sosyal medyadan takip edin!</p>
+                        <div class="footer-social d-flex align-items-center">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer Area -->
+    @await Component.InvokeAsync("_DefaultScriptComponentPartial")
+
 </body>
 </html>
 
