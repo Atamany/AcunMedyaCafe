@@ -1,4 +1,5 @@
 ﻿using AcunMedyaCafe.Context;
+using AcunMedyaCafe.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -30,11 +31,21 @@ namespace AcunMedyaCafe.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddProduct(Entities.Product p)
+        public IActionResult AddProduct(Product p)
         {
-            db.Products.Add(p);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if(p.ImageFile != null)
+            {
+                var extension = Path.GetExtension(p.ImageFile.FileName);
+                var newImageName = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/", newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                p.ImageFile.CopyTo(stream);
+                p.ImageUrl = "/images/" + newImageName;
+                db.Products.Add(p);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }
