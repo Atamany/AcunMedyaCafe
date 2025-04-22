@@ -25,6 +25,10 @@ namespace AcunMedyaCafe.Controllers
         [HttpPost]
         public IActionResult AddCategory(Category p)
         {
+            if(!ModelState.IsValid)
+            {
+                return View(p);
+            }
             _context.Categories.Add(p);
             _context.SaveChanges();
             return RedirectToAction("Index");

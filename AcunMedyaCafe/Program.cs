@@ -1,9 +1,15 @@
 using AcunMedyaCafe.Context;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddFluentValidationAutoValidation().
+AddFluentValidationClientsideAdapters().
+AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 builder.Services.AddDbContext<CafeContext>();
 
 var app = builder.Build();
