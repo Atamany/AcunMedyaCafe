@@ -2,8 +2,9 @@
 using AcunMedyaCafe.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AcunMedyaCafe.Controllers
+namespace AcunMedyaCafe.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly CafeContext _context;
@@ -25,7 +26,7 @@ namespace AcunMedyaCafe.Controllers
         [HttpPost]
         public IActionResult AddCategory(Category p)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(p);
             }
