@@ -1,0 +1,24 @@
+﻿@model List<AcunMedyaCafe.Entities.Gallery>
+<section class="gallery-area section-gap" id="gallery">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-10">
+                <div class="title text-center">
+                    <h1 class="mb-10">Galeri</h1>
+                    <p>
+                        Kafemizden güzel anlar...
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <a href="@item.Photo" class="img-pop-home">
+                    <img class="img-fluid" src="@item.Photo" style="width:225px;height:225px;" alt="">
+                </a>
+            }
+        </div>
+    </div>
+</section>
+
