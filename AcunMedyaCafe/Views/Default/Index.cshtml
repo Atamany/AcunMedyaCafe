@@ -13,29 +13,7 @@
         @await Component.InvokeAsync("_DefaultNavbarComponentPartial")
     </header>
     @await Component.InvokeAsync("_DefaultFeatureComponentPartial")
-    <section class="video-sec-area pb-100 pt-40" id="about">
-        <div class="container">
-            <div class="row justify-content-start align-items-center">
-                <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
-                    <div class="overlay overlay-bg"></div>
-                    <a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="img/play-icon.png" alt=""></a>
-                </div>
-                <div class="col-lg-6 video-left">
-                    <h6>Canlı Kahve yapım süreci.</h6>
-                    <h1>Kahve Yapımımızı <br /> Canlı Yayınlıyoruz</h1>
-                    <p>
-                        <span>
-                            Mükemmelliği sunmak için sizden haber almak için buradayız
-                        </span>
-                    </p>
-                    <p>
-                        "Hayatımı kahve kaşıklarıyla ölçüyorum.”
-                    </p>
-                    <img class="img-fluid" src="https://i.hizliresim.com/ei8u83s.png" style="height:40px;" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
+    @await Component.InvokeAsync("_DefaultAboutComponentPartial")
     @await Component.InvokeAsync("_DefaultProductComponentPartial")
     @await Component.InvokeAsync("_DefaultGalleryComponentPartial")
     <section class="review-area section-gap" id="review">
