@@ -1,0 +1,13 @@
+﻿@model List<AcunMedyaCafe.Entities.Social>
+<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+    <div class="single-footer-widget">
+        <h6>Sosyal Medya</h6>
+        <p>Bizi sosyal medyadan takip edin!</p>
+        <div class="footer-social d-flex align-items-center">
+            @foreach (var item in Model)
+            {
+                <a href="@item.AccountUrl"><img src="@item.ImageUrl" style="width:20px;height:20px;" /></a>
+            }
+        </div>
+    </div>
+</div>
