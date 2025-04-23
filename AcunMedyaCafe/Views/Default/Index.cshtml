@@ -1,4 +1,5 @@
-﻿@{
+﻿@model AcunMedyaCafe.Entities.Subscriber 
+@{
     Layout = null;
 }
 
@@ -123,14 +124,9 @@
                         <h6>Bültene üye ol!</h6>
                         <p>Yeni kampanyalardan haberdar olmak için üye ol!</p>
                         <div class="" id="mc_embed_signup">
-                            <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                            <form method="post" class="form-inline">
+                                <input class="form-control" asp-for="SubscriberEmail" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
                                 <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                                </div>
-
-                                <div class="info pt-20"></div>
                             </form>
                         </div>
                     </div>
