@@ -43,13 +43,13 @@
                                     <td>@item.Description</td>
                                     <td><img src="@item.ImageUrl" style="width:100px;height:100px" /></td>
                                     <td>@item.Category.CategoryName</td>
-                                    <td><a href="/Product/UpdateProduct/@item.ProductId" class="badge badge-info">Güncelle</a></td>
+                                    <td><a href="/Admin/Product/UpdateProduct/@item.ProductId" class="badge badge-info">Güncelle</a></td>
                                     <td><a onclick="deleteProduct(@item.ProductId)" class="badge badge-danger">Sil</a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
-                    <a href="/Product/AddProduct" class="btn btn-primary">Yeni Ürün</a>
+                    <a href="/Admin/Product/AddProduct" class="btn btn-primary">Yeni Ürün</a>
                 </div>
             </div>
         </div>
