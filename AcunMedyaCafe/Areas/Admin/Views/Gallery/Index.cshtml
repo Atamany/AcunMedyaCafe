@@ -1,0 +1,70 @@
+﻿@model List<AcunMedyaCafe.Entities.Gallery>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    var count = 0;
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Galeri Tablosu </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Galeri Listesi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Galeri</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Resim</th>
+                                <th>Güncelle</th>
+                                <th>Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td><img src="@item.Photo" style="width:150px; height:150px;" /></td>
+                                    <td><a href="/Admin/Gallery/UpdateGallery/@item.GalleryId" class="badge badge-info">Güncelle</a></td>
+                                    <td><a onclick="deleteGallery(@item.GalleryId)" class="badge badge-danger">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a href="/Admin/Gallery/AddGallery" class="btn btn-primary">Yeni Resim Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function deleteGallery(id){
+        Swal.fire({
+            title: 'Silmek İstediğinize Emin Misiniz?',
+            text: "Bu işlem geri alınamaz!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Evet, Sil!',
+            cancelButtonText: 'İptal Et!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/Gallery/DeleteGallery/" + id;
+            }
+        })
+    }
+</script>
+

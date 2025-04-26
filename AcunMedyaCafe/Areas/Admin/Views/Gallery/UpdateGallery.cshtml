@@ -1,0 +1,34 @@
+﻿@model AcunMedyaCafe.Entities.Gallery
+@{
+    ViewData["Title"] = "UpdateGallery";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Galeri Güncelleme Sayfası </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Güncelleme İşlemi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Galeri</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="GalleryId" />
+                        <label>Fotoğraf (Url)</label>
+                        <input type="text" asp-for="Photo" class="form-control" />
+                        <br />
+                        <button class="btn btn-primary"><i class="fa fa-save"></i></button><br />
+                        <span asp-validation-for="Photo" class="text-danger"></span><br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

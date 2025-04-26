@@ -19,6 +19,7 @@ builder.Services.AddScoped<IValidator<Adress>, AdressValidator>();
 builder.Services.AddScoped<IValidator<Feature>, FeatureValidator>();
 builder.Services.AddScoped<IValidator<Testimonial>, TestimonialValidator>();
 builder.Services.AddScoped<IValidator<Social>, SocialValidator>();
+builder.Services.AddScoped<IValidator<Gallery>, GalleryValidator>();
 builder.Services.AddDbContext<CafeContext>();
 
 var app = builder.Build();
