@@ -26,20 +26,20 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AddCategory(Category p)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(p);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return View(p);
+            //}
             _context.Categories.Add(p);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Category", new { area = "Admin" });
         }
         public IActionResult DeleteCategory(int id)
         {
             var value = _context.Categories.Find(id);
             _context.Remove(value);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Category", new { area = "Admin" });
         }
         public IActionResult UpdateCategory(int id)
         {
@@ -51,7 +51,7 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
         {
             _context.Categories.Update(p);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Category", new { area = "Admin" });
         }
     }
 }
