@@ -2,10 +2,12 @@
 using AcunMedyaCafe.Entities;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AcunMedyaCafe.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class SocialController : Controller
     {

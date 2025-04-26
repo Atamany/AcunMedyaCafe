@@ -2,12 +2,14 @@
 using AcunMedyaCafe.Entities;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace AcunMedyaCafe.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class AdressController : Controller
     {

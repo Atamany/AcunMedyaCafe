@@ -47,6 +47,8 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseStatusCodePagesWithReExecute("/Error/Error404");
+
 
 // ÖNEMLÝ: Area route'u önce tanýmlanmalý!
 app.MapControllerRoute(
