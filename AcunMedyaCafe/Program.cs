@@ -15,6 +15,7 @@ builder.Services.AddFluentValidationAutoValidation()
 builder.Services.AddScoped<IValidator<Category>, CategoryValidator>();
 builder.Services.AddScoped<IValidator<Product>, ProductValidator>();
 builder.Services.AddScoped<IValidator<About>, AboutValidator>();
+builder.Services.AddScoped<IValidator<Adress>, AdressValidator>();
 builder.Services.AddDbContext<CafeContext>();
 
 var app = builder.Build();
