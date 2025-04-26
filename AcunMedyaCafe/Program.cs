@@ -7,6 +7,15 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddAuthentication("AdminId")
+    .AddCookie("AdminId", options =>
+    {
+        options.LoginPath = "/Login/Index";
+        options.LogoutPath = "/Login/Logout";
+        options.AccessDeniedPath = "/Login/Index/";
+    });
+builder.Services.AddAuthorization();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddFluentValidationAutoValidation()
@@ -35,6 +44,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 
 // ÖNEMLÝ: Area route'u önce tanýmlanmalý!

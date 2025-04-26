@@ -1,0 +1,91 @@
+﻿@model List<AcunMedyaCafe.Entities.Subscriber>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white me-2">
+                <i class="mdi mdi-home"></i>
+            </span> Ana Sayfa
+        </h3>
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span></span>Genel Bakış <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-md-4 stretch-card grid-margin">
+            <div class="card bg-gradient-danger card-img-holder text-white">
+                <div class="card-body">
+                    <img src="https://media.istockphoto.com/id/1267681505/tr/vekt%C3%B6r/kahve-logo-tasar%C4%B1m-vekt%C3%B6r-ill%C3%BCstrasyon-kafe-ve-restoran-i%C3%A7in-vintage-kahve-logo-vekt%C3%B6r.jpg?s=612x612&w=0&k=20&c=DPpJiN5iUNLeFDjpofFJhYEpRAxHyvj48mBkSDMGwGM=" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">
+                        Ürün Sayısı <i class="mdi mdi-chart-line mdi-24px float-end"></i>
+                    </h4>
+                    <h2 class="mb-5">@ViewBag.UrunSayisi</h2>
+                    <h6 class="card-text">Ürünler</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin">
+            <div class="card bg-gradient-info card-img-holder text-white">
+                <div class="card-body">
+                    <img src="https://st2.depositphotos.com/4520249/8375/v/950/depositphotos_83753308-stock-illustration-subscribers-followers-users-icon.jpg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">
+                        Abone Sayısı <i class="mdi mdi-bookmark-outline mdi-24px float-end"></i>
+                    </h4>
+                    <h2 class="mb-5">@ViewBag.AboneSayisi</h2>
+                    <h6 class="card-text">Aboneler</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin">
+            <div class="card bg-gradient-success card-img-holder text-white">
+                <div class="card-body">
+                    <img src="https://media.istockphoto.com/id/998586694/tr/vekt%C3%B6r/simge-yorum-logo-tasar%C4%B1m-evrensel-i%C5%9F-sosyal-medya-piksel-m%C3%BCkemmel.jpg?s=170667a&w=0&k=20&c=PPPtT_JGpUnTScCaWK2a-12W5mrCOQtn6okgA_ReQbw=" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">
+                        Referans Sayısı <i class="mdi mdi-diamond mdi-24px float-end"></i>
+                    </h4>
+                    <h2 class="mb-5">@ViewBag.ReferansSayisi</h2>
+                    <h6 class="card-text">Referanslar</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Son Aboneler</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th> # </th>
+                                    <th> Mail Adresi </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var item in Model){
+                                <tr>
+                                    <td>@item.SubscriberId</td>
+                                    <td>@item.SubscriberEmail</td></tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/PurpleAdmin/assets/vendors/chart.js/chart.umd.js"></script>
+<script src="~/PurpleAdmin/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="~/PurpleAdmin/assets/js/dashboard.js"></script>
+
+
