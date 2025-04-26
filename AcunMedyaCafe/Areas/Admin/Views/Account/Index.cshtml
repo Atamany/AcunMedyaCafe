@@ -1,0 +1,48 @@
+﻿@model AcunMedyaCafe.Entities.Admin
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Admin </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Profil Sayfası</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Admin</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="AdminId" class="form-control" />
+                        <br />
+                        <label>Kullanıcı Adı</label>
+                        <input type="text" asp-for="Username" class="form-control" />
+                        <br />
+                        <label>Şifre</label>
+                        <input type="password" asp-for="Password" class="form-control" />
+                        <br />
+                        <label>Resim (Url)</label>
+                        <input type="text" asp-for="ProfilePhoto" class="form-control" />
+                        <br />
+                        <button class="btn btn-primary"><i class="fa fa-save"></i></button><br />
+                        <span asp-validation-for="Username" class="text-danger"></span><br />
+                        <span asp-validation-for="Password" class="text-danger"></span><br />
+                        <span asp-validation-for="ProfilePhoto" class="text-danger"></span><br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
