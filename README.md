@@ -11,7 +11,7 @@
 <h2>Kullanılan Teknolojiler ve Uygulamalar</h2>
 <ul>
 <li>ASP.NET Core Framework</li>
-<li>Entity Framework (ORM) 6.0 </li>
+<li>Entity Framework (ORM) 8.0 </li>
 <li>Code First</li>
 <li>Microsoft SQL Server (MSSQL) Veritabanı</li>
 <li>HTML</li>
