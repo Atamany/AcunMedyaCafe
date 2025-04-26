@@ -1,0 +1,58 @@
+﻿@model AcunMedyaCafe.Entities.About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Hakkında </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Hakkında Sayfası</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Hakkında</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <label>Kısa Başlık</label>
+                        <input type="hidden" asp-for="AboutId" class="form-control" />
+                        <br />
+                        <input type="text" asp-for="Subitle" class="form-control" />
+                        <br />
+                        <label>Başlık</label>
+                        <input type="text" asp-for="Title" class="form-control" />
+                        <br />
+                        <label>Alt Başlık</label>
+                        <input type="text" asp-for="BoldText" class="form-control" />
+                        <br />
+                        <label>Açıklama</label>
+                        <input type="text" asp-for="Description" class="form-control" />
+                        <br />
+                        <label>Resim (Url)</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" />
+                        <br />
+                        <label>Video (Url)</label>
+                        <input type="text" asp-for="VideoUrl" class="form-control" />
+                        <br />
+                        <button class="btn btn-primary"><i class="fa fa-save"></i></button>
+                        <span asp-validation-for="Subitle" class="text-danger"></span><br />
+                        <span asp-validation-for="Title" class="text-danger"></span><br />
+                        <span asp-validation-for="BoldText" class="text-danger"></span><br />
+                        <span asp-validation-for="Description" class="text-danger"></span><br />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span><br />
+                        <span asp-validation-for="VideoUrl" class="text-danger"></span><br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
