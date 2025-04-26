@@ -1,0 +1,73 @@
+﻿using AcunMedyaCafe.Context;
+using AcunMedyaCafe.Entities;
+using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
+
+namespace AcunMedyaCafe.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class TestimonialController : Controller
+    {
+        private readonly CafeContext _context;
+        private readonly IValidator<Testimonial> _validator;
+
+        public TestimonialController(CafeContext context, IValidator<Testimonial> validator)
+        {
+            _context = context;
+            _validator = validator;
+        }
+
+        public IActionResult Index()
+        {
+            var values = _context.Testimonials.ToList();
+            return View(values);
+        }
+        public IActionResult AddTestimonial()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddTestimonial(Testimonial p)
+        {
+            ValidationResult result = await _validator.ValidateAsync(p);
+
+            if (!result.IsValid)
+            {
+                result.Errors.ForEach(x => ModelState.AddModelError(x.PropertyName, x.ErrorMessage));
+                return View(p);
+            }
+
+            _context.Testimonials.Add(p);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Testimonial", new { area = "Admin" });
+        }
+        public IActionResult DeleteTestimonial(int id)
+        {
+            var value = _context.Testimonials.Find(id);
+            _context.Remove(value);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Testimonial", new { area = "Admin" });
+        }
+        public IActionResult UpdateTestimonial(int id)
+        {
+            var value = _context.Testimonials.Find(id);
+            return View(value);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateTestimonial(Testimonial p)
+        {
+            ValidationResult result = await _validator.ValidateAsync(p);
+
+            if (!result.IsValid)
+            {
+                result.Errors.ForEach(x => ModelState.AddModelError(x.PropertyName, x.ErrorMessage));
+                return View(p);
+            }
+
+            _context.Testimonials.Update(p);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Testimonial", new { area = "Admin" });
+        }
+    }
+}

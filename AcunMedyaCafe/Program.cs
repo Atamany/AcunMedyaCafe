@@ -16,6 +16,8 @@ builder.Services.AddScoped<IValidator<Category>, CategoryValidator>();
 builder.Services.AddScoped<IValidator<Product>, ProductValidator>();
 builder.Services.AddScoped<IValidator<About>, AboutValidator>();
 builder.Services.AddScoped<IValidator<Adress>, AdressValidator>();
+builder.Services.AddScoped<IValidator<Feature>, FeatureValidator>();
+builder.Services.AddScoped<IValidator<Testimonial>, TestimonialValidator>();
 builder.Services.AddDbContext<CafeContext>();
 
 var app = builder.Build();

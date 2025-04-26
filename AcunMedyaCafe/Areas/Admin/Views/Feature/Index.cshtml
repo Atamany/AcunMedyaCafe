@@ -1,0 +1,42 @@
+﻿@model AcunMedyaCafe.Entities.Feature
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Öne Çıkan </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Öne Çıkan Sayfası</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Öne Çıkan</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="FeatureId" class="form-control" />
+                        <br />
+                        <label>Kısa Başlık</label>
+                        <input type="text" asp-for="Subtitle" class="form-control" />
+                        <br />
+                        <label>Başlık</label>
+                        <input type="text" asp-for="Title" class="form-control" />
+                        <br />
+                        <label>Resim (Url)</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" />
+                        <br />
+                        <button class="btn btn-primary"><i class="fa fa-save"></i></button><br />
+                        <span asp-validation-for="Subtitle" class="text-danger"></span><br />
+                        <span asp-validation-for="Title" class="text-danger"></span><br />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span><br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

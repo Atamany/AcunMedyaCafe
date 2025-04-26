@@ -1,17 +1,17 @@
-﻿@model List<AcunMedyaCafe.Entities.Product>
+﻿@model List<AcunMedyaCafe.Entities.Testimonial>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
-    int count = 0;
+    var count = 0;
 }
 
 <div class="content-wrapper">
     <div class="page-header">
-        <h3 class="page-title"> Ürün Tablosu </h3>
+        <h3 class="page-title"> Referans Tablosu </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Ürün Listesi</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Ürün</li>
+                <li class="breadcrumb-item"><a href="#">Referans Listesi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Referans</li>
             </ol>
         </nav>
     </div>
@@ -23,11 +23,10 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Ürün</th>
-                                <th>Fiyat</th>
+                                <th>Başlık</th>
                                 <th>Açıklama</th>
+                                <th>Puan</th>
                                 <th>Resim</th>
-                                <th>Kategori</th>
                                 <th>Güncelle</th>
                                 <th>Sil</th>
                             </tr>
@@ -38,18 +37,17 @@
                                 count++;
                                 <tr>
                                     <td>@count</td>
-                                    <td>@item.Name</td>
-                                    <td>@item.Price</td>
+                                    <td>@item.Title</td>
                                     <td>@item.Description</td>
+                                    <td>@item.Raiting ⭐</td>
                                     <td><img src="@item.ImageUrl" style="width:100px;height:100px" /></td>
-                                    <td>@item.Category.CategoryName</td>
-                                    <td><a href="/Admin/Product/UpdateProduct/@item.ProductId" class="badge badge-info">Güncelle</a></td>
-                                    <td><a onclick="deleteProduct(@item.ProductId)" class="badge badge-danger">Sil</a></td>
+                                    <td><a href="/Admin/Testimonial/UpdateTestimonial/@item.TestimonialId" class="badge badge-info">Güncelle</a></td>
+                                    <td><a onclick="deleteTestimonial(@item.TestimonialId)" class="badge badge-danger">Sil</a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
-                    <a href="/Admin/Product/AddProduct" class="btn btn-primary">Yeni Ürün</a>
+                    <a href="/Admin/Testimonial/AddTestimonial" class="btn btn-primary">Yeni Referans</a>
                 </div>
             </div>
         </div>
@@ -58,7 +56,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    function deleteProduct(id){
+    function deleteTestimonial(id){
         Swal.fire({
             title: 'Silmek İstediğinize Emin Misiniz?',
             text: "Bu işlem geri alınamaz!",
@@ -70,9 +68,11 @@
             cancelButtonText: 'İptal Et!'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = "/Admin/Product/DeleteProduct/" + id;
+                window.location.href = "/Admin/Testimonial/DeleteTestimonial/" + id;
             }
         })
     }
-    </script>
+</script>
+
+
 
