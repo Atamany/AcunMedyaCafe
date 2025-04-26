@@ -1,5 +1,7 @@
 ﻿using AcunMedyaCafe.Context;
 using AcunMedyaCafe.Entities;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AcunMedyaCafe.Areas.Admin.Controllers
@@ -8,10 +10,12 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         private readonly CafeContext _context;
+        private readonly IValidator<Category> _validator;
 
-        public CategoryController(CafeContext context)
+        public CategoryController(CafeContext context, IValidator<Category> validator)
         {
             _context = context;
+            _validator = validator;
         }
 
         public IActionResult Index()
@@ -24,14 +28,18 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddCategory(Category p)
+        public async Task<IActionResult> AddCategory(Category p)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return View(p);
-            //}
+            ValidationResult result = await _validator.ValidateAsync(p);
+
+            if (!result.IsValid)
+            {
+                result.Errors.ForEach(x => ModelState.AddModelError(x.PropertyName, x.ErrorMessage));
+                return View(p);
+            }
+
             _context.Categories.Add(p);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Category", new { area = "Admin" });
         }
         public IActionResult DeleteCategory(int id)
@@ -47,10 +55,18 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
             return View(value);
         }
         [HttpPost]
-        public IActionResult UpdateCategory(Category p)
+        public async Task<IActionResult> UpdateCategory(Category p)
         {
+            ValidationResult result = await _validator.ValidateAsync(p);
+
+            if (!result.IsValid)
+            {
+                result.Errors.ForEach(x => ModelState.AddModelError(x.PropertyName, x.ErrorMessage));
+                return View(p);
+            }
+
             _context.Categories.Update(p);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Category", new { area = "Admin" });
         }
     }

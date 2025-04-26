@@ -1,5 +1,7 @@
 ﻿using AcunMedyaCafe.Context;
 using AcunMedyaCafe.Entities;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,9 +12,11 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly CafeContext db;
-        public ProductController(CafeContext db)
+        private readonly IValidator<Product> validator;
+        public ProductController(CafeContext db, IValidator<Product> validator)
         {
             this.db = db;
+            this.validator = validator;
         }
         public IActionResult Index()
         {
@@ -32,8 +36,15 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddProduct(Product p)
+        public async Task<IActionResult> AddProduct(Product p)
         {
+            ValidationResult result = await validator.ValidateAsync(p);
+
+            if (!result.IsValid)
+            {
+                result.Errors.ForEach(x => ModelState.AddModelError(x.PropertyName, x.ErrorMessage));
+                return View(p);
+            }
             if (p.ImageFile != null)
             {
                 var extension = Path.GetExtension(p.ImageFile.FileName);
@@ -43,10 +54,10 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
                 p.ImageFile.CopyTo(stream);
                 p.ImageUrl = "/images/" + newImageName;
                 db.Products.Add(p);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                await db.SaveChangesAsync();
+                return RedirectToAction("Index", "Product", new { area = "Admin" });
             }
-            return View();
+            return View(p);
         }
         public IActionResult DeleteProduct(int id)
         {
@@ -69,8 +80,15 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
             return View(product);
         }
         [HttpPost]
-        public IActionResult UpdateProduct(Product p)
+        public async Task<IActionResult> UpdateProduct(Product p)
         {
+            ValidationResult result = await validator.ValidateAsync(p);
+
+            if (!result.IsValid)
+            {
+                result.Errors.ForEach(x => ModelState.AddModelError(x.PropertyName, x.ErrorMessage));
+                return View(p);
+            }
             if (p.ImageFile != null)
             {
                 var extension = Path.GetExtension(p.ImageFile.FileName);
@@ -81,8 +99,8 @@ namespace AcunMedyaCafe.Areas.Admin.Controllers
                 p.ImageUrl = "/images/" + newImageName;
             }
             db.Products.Update(p);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index", "Product", new { area = "Admin" });
         }
     }
 }

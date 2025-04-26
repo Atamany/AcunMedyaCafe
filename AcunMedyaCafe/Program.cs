@@ -1,4 +1,6 @@
 using AcunMedyaCafe.Context;
+using AcunMedyaCafe.Entities;
+using AcunMedyaCafe.Validations;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using System.Reflection;
@@ -10,6 +12,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddFluentValidationAutoValidation()
     .AddFluentValidationClientsideAdapters()
     .AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+builder.Services.AddScoped<IValidator<Category>, CategoryValidator>();
+builder.Services.AddScoped<IValidator<Product>, ProductValidator>();
 builder.Services.AddDbContext<CafeContext>();
 
 var app = builder.Build();

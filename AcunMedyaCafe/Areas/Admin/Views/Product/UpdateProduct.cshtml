@@ -37,6 +37,11 @@
                         <input type="hidden" asp-for="ImageUrl" class="form-control"/>
                         <br />
                         <button class="btn btn-primary"><i class="fa fa-save"></i></button>
+                        <span asp-validation-for="Name" class="text-danger"></span><br />
+                        <span asp-validation-for="Price" class="text-danger"></span><br />
+                        <span asp-validation-for="Description" class="text-danger"></span><br />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span><br />
+                        <span asp-validation-for="CategoryId" class="text-danger"></span><br />
                     </form>
                 </div>
             </div>
