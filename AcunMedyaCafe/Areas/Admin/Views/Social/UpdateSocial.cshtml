@@ -1,0 +1,40 @@
+﻿@model AcunMedyaCafe.Entities.Social
+@{
+    ViewData["Title"] = "UpdateSocial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Sosyal Medya Güncelleme Sayfası </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Güncelleme İşlemi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sosyal Medya</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="SocialId" />
+                        <label>Platform</label>
+                        <input type="text" asp-for="Platform" class="form-control" />
+                        <br />
+                        <label>Hesap Url</label>
+                        <input type="text" asp-for="AccountUrl" class="form-control" />
+                        <br />
+                        <label>Resim (URL)</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" />
+                        <br />
+                        <button class="btn btn-primary"><i class="fa fa-save"></i></button><br />
+                        <span asp-validation-for="Platform" class="text-danger"></span><br />
+                        <span asp-validation-for="AccountUrl" class="text-danger"></span><br />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span><br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
